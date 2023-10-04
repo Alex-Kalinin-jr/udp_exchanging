@@ -1,0 +1,5 @@
+/home/alex/projects/github/udp_sender/App/config.tests/static_link_order/CMakeFiles/rebuild_cache.dir
+/home/alex/projects/github/udp_sender/App/config.tests/static_link_order/CMakeFiles/edit_cache.dir
+/home/alex/projects/github/udp_sender/App/config.tests/static_link_order/CMakeFiles/static_link_order_test.dir
+/home/alex/projects/github/udp_sender/App/config.tests/static_link_order/CMakeFiles/staticLib.dir
+/home/alex/projects/github/udp_sender/App/config.tests/static_link_order/CMakeFiles/objLib.dir
