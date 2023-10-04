@@ -23,8 +23,6 @@ MainWindow::~MainWindow() {
   delete info_widget_;
 }
 
-void MainWindow::RedrawPlot() { plot_->replot(); }
-
 void MainWindow::ShowPlot() {
   plot_->show();
   CreateSocket();
@@ -47,8 +45,10 @@ void MainWindow::ReadData() {
       y_vector_.push_back(static_cast<double>(number));
       x_vector_.push_back(++legend);
     }
+    plot_->graph(0)->data()->clear();
+    plot_->graph(0)->setData(x_vector_, y_vector_);
+    plot_->replot();
   }
-  RedrawPlot();
 }
 
 void MainWindow::CreateActions() {
@@ -67,16 +67,13 @@ void MainWindow::CreateActions() {
 void MainWindow::PreparePlot() {
   plot_ = new QCustomPlot(this);
   plot_->addGraph();
-  plot_->graph()->setLineStyle(QCPGraph::lsLine);
-  plot_->graph()->setScatterStyle(
+  plot_->graph(0)->setLineStyle(QCPGraph::lsLine);
+  plot_->graph(0)->setScatterStyle(
       QCPScatterStyle(QCPScatterStyle::ssCircle, 1));
   plot_->setInteraction(QCP::iRangeDrag, true);
   plot_->setInteraction(QCP::iRangeZoom, true);
-  plot_->xAxis->setRange(5, 5);
-  plot_->yAxis->setRange(5, 5);
   plot_->xAxis->setLabel("x");
   plot_->yAxis->setLabel("y");
-  plot_->graph(0)->setData(x_vector_, y_vector_);
   plot_->hide();
 }
 
