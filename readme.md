@@ -19,6 +19,8 @@ Parsed data is visualised using:
 <img src="img.png" width="400"/>
 </div>
 
+y-axis - value \
+x-axis - counter of values \ 
 Blue line - recieved values. \
 Red line - average value.
 
