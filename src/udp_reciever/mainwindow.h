@@ -25,6 +25,7 @@ private slots:
   void ReadData();
   void StartRecieving();
   void StopRecieving();
+  void Refresh();
 
 private:
   Ui::MainWindow *ui;
@@ -43,6 +44,7 @@ private:
 
   QPushButton *start_;
   QPushButton *stop_;
+  QPushButton *refresh_;
   int checker;
 
   void CreateActions();

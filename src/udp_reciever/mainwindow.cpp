@@ -26,6 +26,9 @@ MainWindow::~MainWindow() {
 
 void MainWindow::ShowPlot() {
   plot_->show();
+  start_->show();
+  stop_->show();
+  refresh_->show();
   CreateSocket();
 }
 
@@ -60,6 +63,16 @@ void MainWindow::StartRecieving() {
 
 void MainWindow::StopRecieving() { checker = 0; }
 
+void MainWindow::Refresh() {
+  y_vector_.clear();
+  x_vector_.clear();
+  avg_[0] = 0;
+  avg_[1] = 0;
+  plot_->graph(0)->data()->clear();
+  plot_->graph(1)->data()->clear();
+  plot_->replot();
+}
+
 void MainWindow::CreateActions() {
   // actions
   menu_ = new QMenu(tr("Tools"), this);
@@ -75,8 +88,13 @@ void MainWindow::CreateActions() {
   // buttons
   start_ = new QPushButton(tr("start"), this);
   stop_ = new QPushButton(tr("stop"), this);
+  refresh_ = new QPushButton(tr("refresh"), this);
+  start_->hide();
+  stop_->hide();
+  refresh_->hide();
   connect(start_, &QPushButton::clicked, this, &MainWindow::StartRecieving);
   connect(stop_, &QPushButton::clicked, this, &MainWindow::StopRecieving);
+  connect(refresh_, &QPushButton::clicked, this, &MainWindow::Refresh);
 }
 
 void MainWindow::PreparePlot() {
@@ -113,9 +131,10 @@ void MainWindow::FillLayout() {
   if (layout_ == nullptr || plot_ == nullptr) {
     throw "";
   }
-  layout_->addWidget(plot_, 0, 0, 1, 2);
+  layout_->addWidget(plot_, 0, 0, 1, 3);
   layout_->addWidget(start_, 1, 0, 1, 1, Qt::AlignCenter);
   layout_->addWidget(stop_, 1, 1, 1, 1, Qt::AlignCenter);
+  layout_->addWidget(refresh_, 1, 2, 1, 1, Qt::AlignCenter);
 }
 
 void MainWindow::CreateInfoWidget() {
@@ -123,9 +142,8 @@ void MainWindow::CreateInfoWidget() {
   info_widget_->setWindowTitle(tr("info"));
   info_widget_->setWindowModality(Qt::NonModal);
   QGridLayout layout(info_widget_);
-  QLabel info_lbl(info_widget_);
-  info_lbl.setText("abc");
-  layout.addWidget(&info_lbl, 0, 0, 1, 1, Qt::AlignCenter);
+  QLabel *info_lbl = new QLabel(tr("There could be your text"), info_widget_);
+  layout.addWidget(info_lbl, 0, 0, 1, 1, Qt::AlignCenter);
 }
 
 void MainWindow::CreateSocket() {
