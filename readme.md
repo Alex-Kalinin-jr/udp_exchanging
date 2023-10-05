@@ -6,9 +6,9 @@ The program consists of simple udp-sender and udp-reciever apps.
 - Qt::Core::Network classes are used for processing of data-excanging.
 Information is sent/recieved using:
 - QUdpSocket
-- QNetworkDatagram
+- QNetworkDatagram \
 Information is parsed using:
-- QByteArray
+- QByteArray \
 Parsed data is visualised using:
 - QCustomPlot
 
