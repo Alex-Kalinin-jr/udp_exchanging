@@ -23,6 +23,8 @@ public slots:
   void ShowInfo();
 private slots:
   void ReadData();
+  void StartRecieving();
+  void StopRecieving();
 
 private:
   Ui::MainWindow *ui;
@@ -36,6 +38,12 @@ private:
 
   QVector<double> y_vector_;
   QVector<double> x_vector_;
+  QVector<double> avg_;
+  QVector<double> avg_x_vector_;
+
+  QPushButton *start_;
+  QPushButton *stop_;
+  int checker;
 
   void CreateActions();
   void PreparePlot();
@@ -44,6 +52,7 @@ private:
   void CreateInfoWidget();
   void CreateSocket();
   void RedrawPlot();
+  void ComputeAverage(const QVector<double> &);
 };
 
 #endif // MAINWINDOW_H
