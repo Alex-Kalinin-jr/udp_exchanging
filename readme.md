@@ -7,10 +7,10 @@ The program consists of simple udp-sender and udp-reciever apps.
 
 Information is sent/recieved using:
 - QUdpSocket
-- QNetworkDatagram \
+- QNetworkDatagram 
 
 Information is parsed using:
-- QByteArray \
+- QByteArray 
 
 Parsed data is visualised using:
 - QCustomPlot
