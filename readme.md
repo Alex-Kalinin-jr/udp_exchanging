@@ -2,18 +2,18 @@
 
 ## Implementation
 The program is intended for unix systems. \
-The program consists of simple udp-sender and udp-reciever apps. \
-- Qt::Core::Network classes are used for processing of data-excanging. \
-Information is sent/recieved using: \
+The program consists of simple udp-sender and udp-reciever apps.
+- Qt::Core::Network classes are used for processing of data-excanging.
+Information is sent/recieved using:
 - QUdpSocket
-- QNetworkDatagram \
-Information is parsed using \
-- QByteArray \
-Parsed data is visualised using \
+- QNetworkDatagram
+Information is parsed using:
+- QByteArray
+Parsed data is visualised using:
 - QCustomPlot
 
 <div align="center">
-<img src="img.png"/>
+<img src="img.png" width="400"/>
 </div>
 
 ## Build
