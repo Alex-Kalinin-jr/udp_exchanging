@@ -15,19 +15,19 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow {
   Q_OBJECT
 
-public:
+ public:
   MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
-public slots:
+ public slots:
   void ShowPlot();
   void ShowInfo();
-private slots:
+ private slots:
   void ReadData();
   void StartRecieving();
   void StopRecieving();
   void Refresh();
 
-private:
+ private:
   Ui::MainWindow *ui;
   QMenu *menu_;
   QMenuBar *menu_bar_;
@@ -57,4 +57,4 @@ private:
   void ComputeAverage(const QVector<double> &);
 };
 
-#endif // MAINWINDOW_H
+#endif  // MAINWINDOW_H

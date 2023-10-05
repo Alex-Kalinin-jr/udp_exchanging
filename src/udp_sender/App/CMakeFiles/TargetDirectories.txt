@@ -1,8 +1,0 @@
-/home/alex/projects/github/udp_sender/App/CMakeFiles/install/strip.dir
-/home/alex/projects/github/udp_sender/App/CMakeFiles/install/local.dir
-/home/alex/projects/github/udp_sender/App/CMakeFiles/install.dir
-/home/alex/projects/github/udp_sender/App/CMakeFiles/list_install_components.dir
-/home/alex/projects/github/udp_sender/App/CMakeFiles/rebuild_cache.dir
-/home/alex/projects/github/udp_sender/App/CMakeFiles/edit_cache.dir
-/home/alex/projects/github/udp_sender/App/CMakeFiles/udp_sender.dir
-/home/alex/projects/github/udp_sender/App/CMakeFiles/udp_sender_autogen.dir

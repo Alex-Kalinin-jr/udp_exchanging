@@ -10,7 +10,6 @@ int main(int argc, char *argv[]) {
   QApplication a(argc, argv);
   QUdpSocket *output_socket_ = new QUdpSocket();
   output_socket_->bind(QHostAddress::LocalHost, 10003);
-  int b = 0;
   std::random_device rd;
   std::default_random_engine engine(rd());
   auto gen = std::bind(std::uniform_int_distribution<>(0, 1000), engine);
