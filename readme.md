@@ -3,7 +3,7 @@
 ## Implementation
 The program is intended for unix systems. \
 The program consists of simple udp-sender and udp-reciever apps.
-- Qt::Core::Network classes are used for processing of data-excanging.
+- Qt::Core::Network classes are used for processing of data-excanging. \
 
 Information is sent/recieved using:
 - QUdpSocket
@@ -18,6 +18,9 @@ Parsed data is visualised using:
 <div align="center">
 <img src="img.png" width="400"/>
 </div>
+
+Blue line - recieved values. \
+Red line - average value.
 
 ## Build
 Use makefile:
